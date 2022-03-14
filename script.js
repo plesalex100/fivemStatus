@@ -52,6 +52,9 @@ function updateServerStatus() {
 				}
 			}
 		} else {
+			
+			hasBeenOnline = true;
+			hasNotifiactionSent = false;
 
 			let playersOn = data.Data.clients;
 			let serverName = data.Data.hostname;
