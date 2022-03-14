@@ -33,7 +33,8 @@ function updateServerStatus() {
 			let playersOn = data.Data.clients;
 			let serverName = data.Data.hostname;
 			let slots = data.Data.sv_maxclients;
-
+			
+			top.document.title = `(${playersOn}/${slots}) Server Status`;
 			$(offlineObj).hide();
 			$(onlineObj).show();
 			$(directConnectObj).show();
