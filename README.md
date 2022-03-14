@@ -1,2 +1,3 @@
 # fivemStatus
-fivem web status page
+
+Pentru a configura intra in `script.js` si modifica variabila *serverCode*
