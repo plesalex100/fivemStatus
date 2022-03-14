@@ -18,6 +18,12 @@ directConnectObj.onclick = () => {
 	window.location = `fivem://connect/${serverCode}`;
 }
 
+let hasBeenOnline = false, hasNotifiactionSent = false;
+
+if(("Notification" in window) && Notification.permission !== "granted" && Notification.permission !== "denied") {
+	Notification.requestPermission();
+}
+
 function updateServerStatus() {
 	let apiLink = `https://servers-frontend.fivem.net/api/servers/single/${serverCode}`;
 
@@ -28,6 +34,23 @@ function updateServerStatus() {
 			$(offlineObj).show();
 			$(directConnectObj).hide();
 			$(playersObj).text("Unknown");
+			
+			top.document.title = `(WARNING) Server Offline`;
+			if(hasBeenOnline && !hasNotifiactionSent) {
+				hasNotifiactionSent = true;
+				if ("Notification" in window) {
+					if (Notification.permission === "granted") {
+						let notification = new Notification("Server offline !");
+					}
+					else if (Notification.permission !== "denied") {
+						Notification.requestPermission().then(function(permission) {
+							if (permission === "granted") {
+								let notification = new Notification("Server offline !");
+							}
+						});
+					}
+				}
+			}
 		} else {
 
 			let playersOn = data.Data.clients;
