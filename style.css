@@ -12,6 +12,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	overflow: hidden;
 }
 
 .container {
@@ -44,7 +45,7 @@ body {
 }
 
 .info-title {
-	font-size: 1.2rem;
+	font-size: 1rem;
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -54,6 +55,11 @@ body {
 	width: 1em;
 	fill: #4799eb;
 	margin-right: .5em;
+}
+
+.info-data {
+	font-size: 5rem;
+	font-weight: 700;
 }
 
 .info-connect {
