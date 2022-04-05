@@ -5,7 +5,7 @@
 
 
 // de unde se ia acest cod: https://i.imgur.com/fc2wxX3.png
-const serverCode = "j8kozl";
+const serverCode = "gr4lvo";
 
 
 const offlineObj = document.getElementById("offlineBadge");
